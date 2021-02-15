@@ -1,0 +1,64 @@
+.reg-btn {
+    background: #143956;
+    color: white;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+
+.name-wrapper {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner-wrapper {
+    padding: 10px;
+}
+
+.submit-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.error-msg {
+    padding-top: 20px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.label-name {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.register-input {
+
+}
+
+.header {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.profile-wrapper {
+
+/ / margin-bottom: 50 px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 20px;
+    background-color: white;
+    width: 450px;
+    height: 300px;
+
+}
+

@@ -1,0 +1,20 @@
+.login-wrapper {
+    display: flex;
+}
+
+.header-btn {
+    padding-left: 5px;
+}
+
+.header-title{
+    color: white;
+}
+
+.header-back {
+    background-color: #143956;
+
+}
+
+.name-button{
+    min-width: 150px;
+}

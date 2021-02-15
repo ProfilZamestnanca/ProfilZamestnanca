@@ -1,0 +1,275 @@
+.font-heading {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+.font-text {
+    color: #a0aec0;
+}
+
+.top-wrapper {
+    padding: 10px 20px;
+    height: auto;
+    display: flex;
+}
+
+.left-side-wrapper {
+    padding: 10px;
+    width: 50%;
+    border-right: 1px solid Gainsboro;
+}
+
+.right-side-wrapper {
+    width: 50%;
+    padding: 10px;
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.page-wrapper {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.name-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.about-me {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.layout-wrapper {
+    margin-bottom: 50px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 20px;
+    background-color: white;
+    width: 1070px;
+    height: auto;
+}
+
+.add-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.skills {
+    width: 100%;
+}
+
+.divider {
+
+    width: 100%;
+    height: 1px;
+    background-color: Gainsboro;
+}
+
+.bottom-wrapper {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+
+a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    margin: auto;
+}
+
+.heading {
+    text-align: center;
+}
+
+.color-button {
+    background-color: #143956;
+}
+
+.button-about-me{
+    color: white;
+    width: 33%;
+    background-color: #143956;
+}
+
+.about-me-button-wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+
+.workplace {
+    padding: 10px;
+}
+
+.department {
+    padding: 0 10px 10px 10px;
+}
+
+.room {
+    padding: 0 10px 10px 10px;
+}
+
+.function {
+    padding: 0 10px 10px 10px;
+}
+
+.mobile-phone-wrapper{
+    justify-content: center;
+    display: flex;
+}
+
+.phone-icon{
+    margin-right: 5px;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.contact-data{
+    text-align: center;
+}
+
+.contact-heading{
+    margin-bottom: 0;
+}
+
+.contact-data-wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+
+.year{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #143956;
+
+    display: flex;
+    justify-content: center;
+}
+
+.year-text{
+    margin-bottom: auto;
+    margin-top: auto;
+    color: white;
+    font-weight: bold;
+}
+
+.year-wrapper{
+    display: flex;
+}
+
+.right-side-works-wrapper{
+    padding-left: 10px;
+    width: 100%;
+}
+
+.work-content-wrapper{
+
+}
+
+.button-work{
+    color: white;
+    width: 100%;
+    background-color: #143956;
+}
+
+.vertical-line{
+    width: 2px;
+    background-color: #143956;
+    height: calc(100% - 50px);
+    margin: auto;
+}
+
+.work-wrapper{
+    padding-top: 10px;
+}
+
+.work-heading{
+    padding-top: 10px;
+}
+
+.about-me-card-block{
+    transition: dis;
+    display: block;
+}
+
+.button-active{
+    color: black;
+}
+
+.about-me-card-none{
+    display: none;
+}
+
+.graduate-icon{
+    margin-right: 5px;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.title-heading-wrapper{
+    display: flex;
+}
+
+.title-wrapper{
+    padding: 10px;
+}
+
+.place-wrapper{
+    padding-left: 20px;
+}
+
+.subject-wrapper{
+    padding: 5px;
+    display: flex;
+}
+
+.subject-right-side{
+    padding-top: 20px;
+}
+
+.skills-wrapper{
+    padding: 10px;
+}
+
+.skill-heading{
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.bottom-card{
+    border: 0 !important;
+}
+
+.work-border{
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.inner-content-wrapper{
+    padding: 10px;
+}

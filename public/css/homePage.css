@@ -1,0 +1,10 @@
+.page-wrapper{
+   margin: auto;
+    padding-top: 50px;
+    max-width: 850px;
+}
+
+.my-table{
+    background-color: #143956;
+    color: white;
+}

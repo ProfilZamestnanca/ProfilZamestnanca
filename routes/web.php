@@ -12,25 +12,41 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('editStaticData', [
+    'uses' => 'addController@storeEditStatic'
+]);
+Route::post('addPredmet', [
+    'uses' => 'addController@storePredmet'
+]);
+Route::post('addPublication', [
+    'uses' => 'addController@storePublication'
+]);
+Route::post('addDigSkill', [
+    'uses' => 'addController@storeDigSkill'
+]);
+Route::post('addSocSkill', [
+    'uses' => 'addController@storeSocSkill'
+]);
+Route::post('addLaboratorie', [
+    'uses' => 'addController@storeLaboratori'
+]);
+Route::post('addTitle', [
+    'uses' => 'addController@storeTitle'
+]);
+Route::post('addProject', [
+    'uses' => 'addController@storeProject'
+]);
+Route::post('register', [
+    'uses' => 'registerController@store'
+]);
+Route::post('profile', [
+    'uses' => 'loginController@store'
+]);
+Route::get('logOut', [
+    'uses' => 'loginController@logOut'
+]);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-//nefunguje
-Route::get('zamMVC',[\App\Http\Controllers\ZamestnanecController::class, 'index']);
-
-Route::get('/zamVC/edit/{id}', [\App\Http\Controllers\ZamestnanecController::class, 'edit']);
-
-
-//view and controller
-Route::get('zamVC', [\App\Http\Controllers\ZamestnanecController::class, 'show']);
-
-// view
-Route::get('zamV', function () {
-
-    $zam = DB::table('zamestnanci')->get();
-
-    return view('zamestnanec', ['petani' => $zam]);
-});
-
+Route::get('/edit',[\App\Http\Controllers\ZamestnanecController::class,'editProfile']);
+Route::get('/domov',[\App\Http\Controllers\ZamestnanecController::class,'getAllUsers']);
+Route::get('/profile/{id}',[\App\Http\Controllers\ZamestnanecController::class,'getProfile']);
+Route::get('/register',[\App\Http\Controllers\registerController::class,'index']);
