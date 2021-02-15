@@ -19,7 +19,7 @@ class ZamestnanecController extends Controller
     {
         $users = DB::table('zamestnanci')->where('id', $id)->first();
 
-        $zam = new Zamestnanec($users->meno, 'Jaaa', $users->pracovisko, $users->oddelenie, $users->miestnost, $users->funkcia);
+        $zam = new Zamestnanec($users->meno, $users->info, $users->pracovisko, $users->oddelenie, $users->miestnost, $users->funkcia);
         $zam->id = $id;
         $zam->createContacts($users->telefon, $users->mobil, $users->email);
         $this->getSubjectOfUser($users->id, $zam);
