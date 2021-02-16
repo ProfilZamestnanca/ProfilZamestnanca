@@ -9,17 +9,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class contacts extends Model
 {
- public $mobile;
- public $telephone;
- public $email;
+    public $id;
+    public $mobile;
+    public $telephone;
+    public $email;
 
- public function __construct( $mobile , $telephone, $email, array $attributes = array())
- {
-     parent::__construct($attributes);
-     $this->mobile = $mobile;
-     $this->telephone = $telephone;
-     $this->email = $email;
- }
+    public function __construct($mobile, $telephone, $email, $id, array $attributes = array())
+    {
+        parent::__construct($attributes);
+        $this->id = $id;
+        $this->mobile = $mobile;
+        $this->telephone = $telephone;
+        $this->email = $email;
+    }
 
     /**
      * @return mixed

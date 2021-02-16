@@ -27,6 +27,9 @@
             </div>
             <div class="modal-body">
                 <div class="name-wrapper">
+                    <div class="label-input">
+                        Názov
+                    </div>
                     {{Form::text('nameSocSkill','',['class' => 'form-control register-input','placeholder' => 'Nazov'])}}
                 </div>
             </div>

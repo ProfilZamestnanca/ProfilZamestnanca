@@ -109,6 +109,34 @@ class addController extends Controller
         return redirect('profile/' . Session::get('id'));
     }
 
+    public function storeEditStatic(Request $request)
+    {
+        $this->validate($request, [
+            'meno' => 'required',
+        ]);
+        $users = DB::update('update zamestnanci set meno = ?, pracovisko = ?, oddelenie = ?, miestnost = ?, funkcia = ? where id = ?',
+            [$request->get('meno'), $request->get('pracovisko'),
+                $request->get('oddelenie'), $request->get('miestnost'), $request->get('funkcia'), Session::get('id')]);
+
+        return redirect('profile/' . Session::get('id'));
+    }
+
+    public function storeEditSubject(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',
+            'year ' => 'required',]);
+        DB::update('update predmety set nazov = ?, rok = ? where id = ?',
+            [$request->get('name'), $request->get('year'), $request->get('id')]);
+        return redirect('profile/' . Session::get('id'));
+    }
+
+    public function deleteSubject()
+    {
+    }
+
+
     public function storeTitle(Request $request)
     {
         $this->validate($request, [
@@ -127,9 +155,6 @@ class addController extends Controller
         return redirect('profile/' . Session::get('id'));
     }
 
-    public function storeEditStatic()
-    {
-    }
 
     /**
      * Store a newly created resource in storage.

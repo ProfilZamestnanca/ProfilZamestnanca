@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class subject extends Model
 {
+    public $id;
     private $name;
     private $year;
 
@@ -17,9 +18,10 @@ class subject extends Model
      * @param $name
      * @param $year
      */
-    public function __construct($name, $year,  array $attributes = array())
+    public function __construct($name, $year,$id,  array $attributes = array())
     {
         parent::__construct($attributes);
+        $this->id = $id;
         $this->name = $name;
         $this->year = $year;
     }

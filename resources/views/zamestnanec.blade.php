@@ -75,9 +75,9 @@
                                             </div>
                                         </div>
                                     @endfor
-                                        @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                            @include('addTitles')
-                                        @endif
+                                    @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                        @include('addTitles')
+                                    @endif
                                 </div>
                             </div>
                             <div class="about-me-content card-body card about-me-card-none"
@@ -97,15 +97,21 @@
                                                     <div class="subject-wrapper">
                                                         <i class="fas fa-chalkboard-teacher graduate-icon"></i>
                                                         <div
-                                                            class="font-heading">{{$zam->sortedSubjects[$l][$i]->getName()}}</div>
+                                                            class="font-heading">{{$zam->sortedSubjects[$l][$i]->getName()}}
+                                                        </div>
+                                                        @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                                            <div class="edit-delete">
+                                                                @include('editSubject',['l' => $l, 'i' => $i])
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 @endfor
                                             </div>
                                         </div>
                                     @endfor
-                                        @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                            @include('addPredmet')
-                                        @endif
+                                    @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                        @include('addPredmet')
+                                    @endif
                                 </div>
                             </div>
                             <div class="about-me-content card-body card about-me-card-none"
@@ -141,6 +147,9 @@
                 </div>
             </div>
             <div class="right-side-wrapper">
+                @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                    @include('editStaticData')
+                @endif
                 <div class="workplace">
                     <h5 class="font-heading">Pracovisko</h5>
                     <p class="font-text">
@@ -158,9 +167,6 @@
                     <h5 class="font-heading">Funkcia</h5>
                     <p class="font-text">{{$zam->getFunction()}}</p>
                 </div>
-                @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                    @include('editStaticData')
-                @endif
                 <div class="accordion md-accordion" id="header-data" role="tablist" aria-multiselectable="true">
                     <!-- Accordion card -->
                     <div class="card">
@@ -201,6 +207,9 @@
                                     <p class="font-text contact-data">{{$zam->getContacts()->getEmail()}}</p>
                                 </div>
                             </div>
+                            @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                @include('editContacts')
+                            @endif
                         </div>
 
                     </div>
@@ -224,7 +233,7 @@
                                 @for($i = 0; $i < count($zam->getLaboratories()); $i++ )
                                     <div class="subject-wrapper">
                                         <i class="fas fa-flask graduate-icon"></i>
-                                        <div class="font-heading">{{$zam->getLaboratories()[$i]}}</div>
+                                        <div class="font-heading">{{$zam->getLaboratories()[$i]->name}}</div>
                                     </div>
                                 @endfor
                                 @if(Session::get('id') != '' && Session::get('id') == $zam->id)
@@ -259,9 +268,9 @@
                                             <div
                                                 class="skill font-text place-wrapper">{{$zam->getSocialSkills()[$i]}}</div>
                                         @endfor
-                                            @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                                @include('addSocialSkill')
-                                            @endif
+                                        @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                            @include('addSocialSkill')
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="divider"></div>
@@ -275,9 +284,9 @@
                                             <div
                                                 class="skill font-text place-wrapper">{{$zam->getDigitalSkills()[$i]->getName()}}</div>
                                         @endfor
-                                            @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                                @include('addDigitalSkill')
-                                            @endif
+                                        @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                            @include('addDigitalSkill')
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -336,9 +345,9 @@
                                     </div>
                                 </div>
                             @endfor
-                                @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                    @include('addPublication')
-                                @endif
+                            @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                @include('addPublication')
+                            @endif
                         </div>
                     </div>
 

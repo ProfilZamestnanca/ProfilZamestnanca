@@ -68,6 +68,10 @@ body {
     height: auto;
 }
 
+.edit-delete{
+    margin-left: auto;
+}
+
 .add-wrapper{
     display: flex;
     justify-content: center;

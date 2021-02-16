@@ -26,9 +26,15 @@
             </div>
             <div class="modal-body">
                 <div class="name-wrapper">
+                    <div class="label-input">
+                        Názov
+                    </div>
                     {{Form::text('nameProject','',['class' => 'form-control register-input','placeholder' => 'Názov'])}}
                 </div>
                 <div class="name-wrapper">
+                    <div class="label-input">
+                        Rok
+                    </div>
                     {{Form::text('yearProject','',['class' => 'form-control register-input','placeholder' => 'Rok'])}}
                 </div>
             </div>

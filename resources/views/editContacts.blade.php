@@ -2,28 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Laboratori</title>
+    <title>Edit</title>
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/edit.css') }}"/>
 </head>
 <body>
 <div class="add-btn-wrapper">
-    <button type="button" class="btn reg-btn" data-toggle="modal" data-target="#addPredmet">Pridať</button>
+    <button type="button" class="btn reg-btn" data-toggle="modal" data-target="#editContacts">Upraviť</button>
 </div>
 
-{!! Form::open(['action' => 'addController@storePredmet','method' => 'POST']) !!}
+{!! Form::open(['action' => 'addController@storeEditContacts','method' => 'POST']) !!}
 
 <!-- Modal -->
-<div class="modal fade" id="addPredmet" tabindex="-1" role="dialog" aria-labelledby="addPredmet"
+<div class="modal fade" id="editContacts" tabindex="-1" role="dialog" aria-labelledby="editContacts"
      aria-hidden="true">
 
     <div class="modal-dialog" role="document">
-        <div class="error-msg">
-            @include('messages')
-        </div>ł
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addPredmet">Pridať Predmet</h5>
+                <h5 class="modal-title" id="editContacts">Upraviť Kontakty</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -31,21 +28,26 @@
             <div class="modal-body">
                 <div class="name-wrapper">
                     <div class="label-input">
-                        Názov
+                        Telefón
                     </div>
-                    {{Form::text('namePredmet','',['class' => 'form-control register-input','placeholder' => 'Názov'])}}
+                    {{Form::text('phone',$zam->getContacts()->getTelephone(),['class' => 'form-control register-input','placeholder' => 'Telefón'])}}
                 </div>
                 <div class="name-wrapper">
                     <div class="label-input">
-                        Rok výučby
+                        Mobil
                     </div>
-                    {{Form::text('yearPredmet','',['class' => 'form-control register-input','placeholder' => 'Rok výučby'])}}
+                    {{Form::text('mobile',$zam->getContacts()->getMobile(),['class' => 'form-control register-input','placeholder' => 'Mobil'])}}
                 </div>
-
+                <div class="name-wrapper">
+                    <div class="label-input">
+                        Email
+                    </div>
+                    {{Form::text('email',$zam->getContacts()->getEmail(),['class' => 'form-control register-input','placeholder' => 'Email'])}}
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn reg-btn" data-dismiss="modal">Zavrieť</button>
-                {{Form::submit('Pridať',['class'=>'btn reg-btn'])}}
+                {{Form::submit('Upraviť',['class'=>'btn reg-btn'])}}
             </div>
         </div>
     </div>

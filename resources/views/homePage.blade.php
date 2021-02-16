@@ -25,7 +25,7 @@
         <tbody>
         @foreach($users as $user)
             <tr>
-                <th scope="row">{{ $loop->iteration }}</th>
+                <td >{{ $loop->iteration }} </td>
                 @if(str_replace(' ','',$user->meno) != '')
                     <th>{{$user->meno}}</th>
                 @else

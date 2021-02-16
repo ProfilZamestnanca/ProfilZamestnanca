@@ -27,28 +27,34 @@
             </div>
             <div class="modal-body">
                 <div class="name-wrapper">
-                    {{Form::text('nameEdit',$zam->getName(),['class' => 'form-control register-input','placeholder' => 'Meno'])}}
+                    <div class="label-input">
+                        Meno
+                    </div>
+                    {{Form::text('meno',$zam->getName(),['class' => 'form-control register-input','placeholder' => 'Meno'])}}
                 </div>
                 <div class="name-wrapper">
-                    {{Form::text('workPlaceEdit',$zam->getWorkPlace(),['class' => 'form-control register-input','placeholder' => 'Pracovisko'])}}
+                    <div class="label-input">
+                        Pracovisko
+                    </div>
+                    {{Form::text('pracovisko',$zam->getWorkPlace(),['class' => 'form-control register-input','placeholder' => 'Pracovisko'])}}
                 </div>
                 <div class="name-wrapper">
-                    {{Form::text('yearPredmet','',['class' => 'form-control register-input','placeholder' => 'Oddelenie'])}}
+                    <div class="label-input">
+                        Oddelenie
+                    </div>
+                    {{Form::text('oddelenie',$zam->getDepartment(),['class' => 'form-control register-input','placeholder' => 'Oddelenie'])}}
                 </div>
                 <div class="name-wrapper">
-                    {{Form::text('roomEdit','',['class' => 'form-control register-input','placeholder' => 'Miestnosť'])}}
+                    <div class="label-input">
+                        Miestnosť
+                    </div>
+                    {{Form::text('miestnost',$zam->getRoom(),['class' => 'form-control register-input','placeholder' => 'Miestnosť'])}}
                 </div>
                 <div class="name-wrapper">
-                    {{Form::text('functionEdit','',['class' => 'form-control register-input','placeholder' => 'Funkcia'])}}
-                </div>
-                <div class="name-wrapper">
-                    {{Form::text('telPhoneEdit','',['class' => 'form-control register-input','placeholder' => 'Telefón'])}}
-                </div>
-                <div class="name-wrapper">
-                    {{Form::text('phoneEdit','',['class' => 'form-control register-input','placeholder' => 'Mobil'])}}
-                </div>
-                <div class="name-wrapper">
-                    {{Form::text('emailEdit','',['class' => 'form-control register-input','placeholder' => 'Email'])}}
+                    <div class="label-input">
+                        Funkcia
+                    </div>
+                    {{Form::text('funkcia',$zam->getFunction(),['class' => 'form-control register-input','placeholder' => 'Funkcia'])}}
                 </div>
             </div>
             <div class="modal-footer">

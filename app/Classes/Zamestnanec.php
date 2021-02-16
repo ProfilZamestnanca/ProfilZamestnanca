@@ -8,6 +8,7 @@ use App\Classes\project;
 use App\Classes\title;
 use App\Classes\subject;
 use App\Classes\digitalSkills;
+use App\Classes\laboratory;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -56,14 +57,14 @@ class Zamestnanec extends Model
         $this->function = $function;
     }
 
-    public function createContacts($telephone, $mobile, $email)
+    public function createContacts($telephone, $mobile, $email,$id)
     {
-        $this->contacts = new contacts($mobile, $telephone, $email);
+        $this->contacts = new contacts($mobile, $telephone, $email,$id);
     }
 
-    public function addLaboratory($name)
+    public function addLaboratory($name,$id)
     {
-        array_push($this->laboratory, $name);
+        array_push($this->laboratory, new laboratory($name,$id));
     }
 
     public function addSocialSkill($name)
@@ -76,9 +77,9 @@ class Zamestnanec extends Model
         return $this->socialSkills;
     }
 
-    public function addDigitalSkill($name, $level)
+    public function addDigitalSkill($name, $level,$id)
     {
-        array_push($this->digitalSkills, new digitalSkills($name, $level));
+        array_push($this->digitalSkills, new digitalSkills($name, $level,$id));
     }
 
     public function getDigitalSkills()
@@ -91,9 +92,9 @@ class Zamestnanec extends Model
         return $this->laboratory;
     }
 
-    public function addTitle($name, $shortcut, $year, $school)
+    public function addTitle($name, $shortcut, $year, $school,$id)
     {
-        array_push($this->titles, new title($name, $shortcut, $year, $school));
+        array_push($this->titles, new title($name, $shortcut, $year, $school,$id));
     }
 
     public function getTitles()
@@ -101,9 +102,9 @@ class Zamestnanec extends Model
         return $this->titles;
     }
 
-    public function addPublication($name, $content, $year)
+    public function addPublication($name, $content, $year,$id)
     {
-        array_push($this->publications, new publication($name, $content, $year));
+        array_push($this->publications, new publication($name, $content, $year,$id));
     }
 
     public function getPublications()
@@ -111,9 +112,9 @@ class Zamestnanec extends Model
         return $this->publications;
     }
 
-    public function addSubject($name, $year)
+    public function addSubject($name, $year,$id)
     {
-        array_push($this->subject, new subject($name, $year));
+        array_push($this->subject, new subject($name, $year,$id));
     }
 
     public function getSubjects()
@@ -121,9 +122,9 @@ class Zamestnanec extends Model
         return $this->subject;
     }
 
-    public function addProject($name, $year)
+    public function addProject($name, $year,$id)
     {
-        array_push($this->project, new project($name, $year));
+        array_push($this->project, new project($name, $year,$id));
     }
 
     public function getProjects()

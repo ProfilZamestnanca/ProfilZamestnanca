@@ -11,16 +11,17 @@ class publication extends Model
     private $name;
     private $content;
     private $year;
-
+public $id;
     /**
      * publication constructor.
      * @param $name
      * @param $content
      * @param $year
      */
-    public function __construct($name, $content, $year, array $attributes = array())
+    public function __construct($name, $content, $year,$id, array $attributes = array())
     {
         parent::__construct($attributes);
+        $this->id = $id;
         $this->name = $name;
         $this->content = $content;
         $this->year = $year;

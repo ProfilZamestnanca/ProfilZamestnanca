@@ -12,6 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('deleteSubject', [
+    'uses' => 'addController@deleteSubject'
+]);
+Route::post('storeEditSubject', [
+    'uses' => 'addController@storeEditSubject'
+]);
+Route::post('editContacts', [
+    'uses' => 'addController@storeEditContacts'
+]);
 Route::post('editStaticData', [
     'uses' => 'addController@storeEditStatic'
 ]);

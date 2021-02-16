@@ -8,14 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class title extends Model
 {
+    public $id;
     private $titleType;
     private $titleShortcut;
     private $school;
     private $year;
 
-    public function __construct($titleType, $titleShortcut, $year, $school, array $attributes = array())
+    public function __construct($titleType, $titleShortcut, $year, $school, $id, array $attributes = array())
     {
         parent::__construct($attributes);
+        $this->id = $id;
         $this->school = $school;
         $this->titleType = $titleType;
         $this->titleShortcut = $titleShortcut;

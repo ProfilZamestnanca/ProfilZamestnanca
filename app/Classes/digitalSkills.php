@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class digitalSkills extends Model
 {
+    public $id;
     private $name;
     private $level;
-    public function __construct($name, $level, array $attributes = array())
+    public function __construct($name, $level,$id, array $attributes = array())
     {
         parent::__construct($attributes);
+        $this->id = $id;
         $this->name = $name;
         $this->level = $level;
     }

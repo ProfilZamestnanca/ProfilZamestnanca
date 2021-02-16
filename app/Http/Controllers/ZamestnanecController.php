@@ -21,7 +21,7 @@ class ZamestnanecController extends Controller
 
         $zam = new Zamestnanec($users->meno, $users->info, $users->pracovisko, $users->oddelenie, $users->miestnost, $users->funkcia);
         $zam->id = $id;
-        $zam->createContacts($users->telefon, $users->mobil, $users->email);
+        $zam->createContacts($users->telefon, $users->mobil, $users->email,$id);
         $this->getSubjectOfUser($users->id, $zam);
         $this->getTitles($users->id, $zam);
         $this->getSocsialSkills($users->id, $zam);
@@ -30,11 +30,6 @@ class ZamestnanecController extends Controller
         $this->getProjects($users->id, $zam);
         $this->getPublications($users->id, $zam);
         return view('zamestnanec', compact('zam'));
-    }
-
-    public function editProfile()
-    {
-        return view('edit');
     }
 
     public function getAllUsers()
@@ -54,10 +49,10 @@ class ZamestnanecController extends Controller
             ->join('zamestnanci', 'zamestnanci_publikacie.zamestnanec_id', '=', 'zamestnanci.id')
             ->join('publikacie', 'zamestnanci_publikacie.publikacia_id', '=', 'publikacie.id')
             ->where('zamestnanci_publikacie.zamestnanec_id', '=', $userId)
-            ->select('publikacie.obsah', 'publikacie.rok', 'publikacie.nazov')->get()->sort();
+            ->select('publikacie.obsah', 'publikacie.rok', 'publikacie.nazov','publikacie.id')->get()->sort();
         for ($i = 0; count($publication->pluck('nazov')) > $i; $i++) {
             $userClass->addPublication($publication->pluck('nazov')[$i], $publication->pluck('obsah')[$i],
-                $publication->pluck('rok')[$i]);
+                $publication->pluck('rok')[$i], $publication->pluck('id')[$i]);
         }
         $userClass->sortPublicationsByYear();
     }
@@ -68,10 +63,11 @@ class ZamestnanecController extends Controller
             ->join('zamestnanci', 'zamestnanci_tituly.zamestnanec_id', '=', 'zamestnanci.id')
             ->join('tituly', 'zamestnanci_tituly.titul_id', '=', 'tituly.id')
             ->where('zamestnanci_tituly.zamestnanec_id', '=', $userId)
-            ->select('tituly.nazov', 'tituly.skratka', 'zamestnanci_tituly.rok', 'zamestnanci_tituly.skola')->get()->sort()->reverse();
+            ->select('tituly.nazov', 'tituly.skratka', 'zamestnanci_tituly.rok', 'zamestnanci_tituly.skola','tituly.id')->get()->sort()->reverse();
         for ($i = 0; count($tituly->pluck('nazov')) > $i; $i++) {
 
-            $userClass->addTitle($tituly->pluck('nazov')[$i], $tituly->pluck('skratka')[$i], $tituly->pluck('rok')[$i], $tituly->pluck('skola')[$i]);
+            $userClass->addTitle($tituly->pluck('nazov')[$i], $tituly->pluck('skratka')[$i],
+                $tituly->pluck('rok')[$i], $tituly->pluck('skola')[$i],$tituly->pluck('id')[$i]);
         }
         $userClass->sortTitleByYear();
     }
@@ -82,9 +78,9 @@ class ZamestnanecController extends Controller
             ->join('zamestnanci', 'zamestnanci_predmety.zamestnanec_id', '=', 'zamestnanci.id')
             ->join('predmety', 'zamestnanci_predmety.predmet_id', '=', 'predmety.id')
             ->where('zamestnanci.id', '=', $userId)
-            ->select('predmety.nazov', 'predmety.rok')->get()->sort()->reverse();
+            ->select('predmety.nazov', 'predmety.rok','predmety.id')->get()->sort();
         for ($i = 0; count($predmety->pluck('nazov')) > $i; $i++) {
-            $userClass->addSubject($predmety->pluck('nazov')[$i], $predmety->pluck('rok')[$i]);
+            $userClass->addSubject($predmety->pluck('nazov')[$i], $predmety->pluck('rok')[$i],$predmety->pluck('id')[$i]);
         }
         $userClass->sortSubjectByYear();
     }
@@ -95,9 +91,9 @@ class ZamestnanecController extends Controller
             ->join('zamestnanci', 'zamestnanci_soc_zrucnosti.zamestnanec_id', '=', 'zamestnanci.id')
             ->join('soc_zrucnosti', 'zamestnanci_soc_zrucnosti.soc_zrucnost_id', '=', 'soc_zrucnosti.id')
             ->where('zamestnanci.id', '=', $userId)
-            ->select('soc_zrucnosti.nazov')->get();
+            ->select('soc_zrucnosti.nazov','soc_zrucnosti.id')->get();
         for ($i = 0; count($socSkills->pluck('nazov')) > $i; $i++) {
-            $userClass->addSocialSkill($socSkills->pluck('nazov')[$i]);
+            $userClass->addSocialSkill($socSkills->pluck('nazov')[$i],$socSkills->pluck('id')[$i]);
         }
     }
 
@@ -107,9 +103,9 @@ class ZamestnanecController extends Controller
             ->join('zamestnanci', 'zamestnanci_dig_zrucnosti.zamestnanec_id', '=', 'zamestnanci.id')
             ->join('dig_zrucnosti', 'zamestnanci_dig_zrucnosti.dig_zrucnost_id', '=', 'dig_zrucnosti.id')
             ->where('zamestnanci.id', '=', $userId)
-            ->select('dig_zrucnosti.nazov', 'dig_zrucnosti.uroven')->get();
+            ->select('dig_zrucnosti.nazov', 'dig_zrucnosti.uroven','dig_zrucnosti.id')->get();
         for ($i = 0; count($digSkills->pluck('nazov')) > $i; $i++) {
-            $userClass->addDigitalSkill($digSkills->pluck('nazov')[$i], $digSkills->pluck('uroven')[$i]);
+            $userClass->addDigitalSkill($digSkills->pluck('nazov')[$i], $digSkills->pluck('uroven')[$i],$digSkills->pluck('id')[$i]);
         }
     }
 
@@ -119,9 +115,9 @@ class ZamestnanecController extends Controller
             ->join('zamestnanci', 'zamestnanci_laboratoria.zamestnanec_id', '=', 'zamestnanci.id')
             ->join('laboratoria', 'zamestnanci_laboratoria.laboratorium_id', '=', 'laboratoria.id')
             ->where('zamestnanci.id', '=', $userId)
-            ->select('laboratoria.nazov')->get();
+            ->select('laboratoria.nazov','laboratoria.id')->get();
         for ($i = 0; count($lab->pluck('nazov')) > $i; $i++) {
-            $userClass->addLaboratory($lab->pluck('nazov')[$i]);
+            $userClass->addLaboratory($lab->pluck('nazov')[$i],$lab->pluck('id')[$i]);
         }
     }
 
@@ -131,9 +127,9 @@ class ZamestnanecController extends Controller
             ->join('zamestnanci', 'zamestnanci_projekty.zamestnanec_id', '=', 'zamestnanci.id')
             ->join('projekty', 'zamestnanci_projekty.projekt_id', '=', 'projekty.id')
             ->where('zamestnanci.id', '=', $userId)
-            ->select('projekty.nazov', 'projekty.rok')->get();
+            ->select('projekty.nazov', 'projekty.rok','projekty.id')->get();
         for ($i = 0; count($projects->pluck('nazov')) > $i; $i++) {
-            $userClass->addProject($projects->pluck('nazov')[$i], $projects->pluck('rok')[$i]);
+            $userClass->addProject($projects->pluck('nazov')[$i], $projects->pluck('rok')[$i],$projects->pluck('id')[$i]);
         }
         $userClass->sortProjectsByYear();
     }
