@@ -17,7 +17,7 @@ class Tituly extends Migration
             $table->increments('id')->index();
             $table->string('nazov')->nullable();
             $table->string('skratka');
-            $table->integer('rok');
+            $table->integer('rok')->nullable();
             $table->boolean('za')->nullable();
         });
     }
