@@ -56,6 +56,7 @@ Route::get('logOut', [
 ]);
 
 Route::get('/edit',[\App\Http\Controllers\ZamestnanecController::class,'editProfile']);
-Route::get('/domov',[\App\Http\Controllers\ZamestnanecController::class,'getAllUsers']);
+//Route::get('/domov',[\App\Http\Controllers\ZamestnanecController::class,'getAllUsers']);
+Route::get('/domov', ['uses'=>'ZamestnanecController@getAllUsers', 'as'=>'users.index']);
 Route::get('/profile/{id}',[\App\Http\Controllers\ZamestnanecController::class,'getProfile']);
 Route::get('/register',[\App\Http\Controllers\registerController::class,'index']);

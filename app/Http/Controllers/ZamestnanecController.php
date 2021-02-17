@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Classes\Zamestnanec;
 use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Type\Integer;
+use DataTables;
 
 class ZamestnanecController extends Controller
 {
@@ -32,10 +33,19 @@ class ZamestnanecController extends Controller
         return view('zamestnanec', compact('zam'));
     }
 
-    public function getAllUsers()
+    public function getAllUsers(Request $request)
     {
-        $users = DB::table('zamestnanci')->get();
-        return view('homePage', ['users' => $users]);
+        if ($request->ajax()) {
+            $users = DB::table('zamestnanci')->get();
+            return Datatables::of($users)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    return  '<a href="/profile/'.$row->id.'">Profil</a>';
+                })
+                ->rawColumns(['action'])
+                ->make(true);;
+        }
+        return view('homePage');
     }
 
     /**

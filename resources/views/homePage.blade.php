@@ -6,61 +6,56 @@
     <title>Domov</title>
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/homePage.css') }}"/>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
-<div class="page-wrapper">
-    <table class="table">
-        <thead class=" my-table">
+<div class="container" style="margin-top: 50px">
+    <table class="table table-bordered data-table">
+        <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Meno</th>
-            <th scope="col">Pracovisko</th>
-            <th scope="col">Miestnosť</th>
-            <th scope="col">Funkcia</th>
-            <th scope="col">Email</th>
-            <th scope="col">Tel. číslo</th>
-            <th scope="col">Prejsť na profil</th>
+            <th>#</th>
+            <th>Meno</th>
+            <th>Pracovisko</th>
+            <th>Miestnosť</th>
+            <th>Funkcia</th>
+            <th>Email</th>
+            <th>Tel. číslo</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $user)
-            <tr>
-                <td >{{ $loop->iteration }} </td>
-                @if(str_replace(' ','',$user->meno) != '')
-                    <th>{{$user->meno}}</th>
-                @else
-                    <th>Neuvedené</th>
-                @endif
-                @if(str_replace(' ','',$user->pracovisko) != '')
-                    <th>{{$user->pracovisko}}</th>
-                @else
-                    <th>Neuvedené</th>
-                @endif
-                @if(str_replace(' ','',$user->miestnost) != '')
-                    <th>{{$user->miestnost}}</th>
-                @else
-                    <th>Neuvedené</th>
-                @endif
-                @if(str_replace(' ','',$user->funkcia) != '')
-                    <th>{{$user->funkcia}}</th>
-                @else
-                    <th>Neuvedené</th>
-                @endif
-                @if(str_replace(' ','',$user->email) != '')
-                    <th>{{$user->email}}</th>
-                @else
-                    <th>Neuvedené</th>
-                @endif
-                @if(str_replace(' ','',$user->mobil) != '')
-                    <th>{{$user->mobil}}</th>
-                @else
-                    <th>Neuvedené</th>
-                @endif
-                <th><a href="{{ url('/profile/'.$user->id) }}">Prejsť na profil</a></th>
-            </tr>
-        @endforeach
         </tbody>
     </table>
 </div>
 </body>
+
+<script type="text/javascript">
+    $(function () {
+        var table = $('.data-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('users.index') }}",
+            columns: [
+                {data: 'id', name: 'id'},
+                {data: 'meno', name: 'meno'},
+                {data: 'pracovisko', name: 'pracovisko'},
+                {data: 'miestnost', name: 'miestnost'},
+                {data: 'funkcia', name: 'funkcia'},
+                {data: 'email', name: 'email'},
+                {data: 'telefon', name: 'telefon'},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
+            ]
+        });
+
+    });
+</script>
 </html>
