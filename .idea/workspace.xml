@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2542fa8c-20f8-485e-9f5c-5fc5ca945218" name="Default Changelist" comment="">
+    <list default="true" id="2542fa8c-20f8-485e-9f5c-5fc5ca945218" name="Default Changelist" comment="dataTables">
+      <change beforePath="$PROJECT_DIR$/.idea/laravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/Zamestnanec.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/Zamestnanec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/contacts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/digitalSkills.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/digitalSkills.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/publication.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/publication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/title.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/title.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ZamestnanecController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ZamestnanecController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/addController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/addController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/employeeProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/employeeProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addDigitalSkill.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addDigitalSkill.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addLaboratori.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addLaboratori.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addPredmet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addPredmet.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addProject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addProject.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addPublication.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addPublication.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addSocialSkill.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addSocialSkill.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editStaticData.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editStaticData.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/homePage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/homePage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/zamestnanec.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/zamestnanec.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,9 +35,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,6 +47,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -169,6 +172,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kmhWcVIHlFdd4mSTGzG4um5GJr" />
@@ -201,25 +205,13 @@
       <recent name="C:\xampp\htdocs\ProfilZamestnanca\public\assets" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -264,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613374715891</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="dataTables">
+      <created>1613558736382</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613558736382</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,17 +274,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="msg" />
+    <MESSAGE value="dataTables" />
+    <option name="LAST_COMMIT_MESSAGE" value="dataTables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="73" key="#PHP" timestamp="1606311752233">
@@ -308,5 +307,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="549" y="153" key="NewPhpClassDialog/0.0.1600.860@0.0.1600.860" timestamp="1606502980089" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1613558749713">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1613558749713" />
   </component>
 </project>
