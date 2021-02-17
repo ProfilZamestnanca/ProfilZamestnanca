@@ -109,15 +109,78 @@ class addController extends Controller
         return redirect('profile/' . Session::get('id'));
     }
 
+    public function storeEditTitle(Request $request)
+    {
+        $this->validate($request, [
+            'schoolName' => 'required',
+            'year' => 'required',
+        ]);
+        $users = DB::update('update  zamestnanci_tituly set  rok = ?,skola = ? where zamestnanec_id = ? and titul_id = ? ',
+            [$request->get('year'), $request->get('schoolName'), Session::get('id'), $request->get('idTitle')]);
+
+        return redirect('profile/' . Session::get('id'));
+    }
+
     public function storeEditStatic(Request $request)
     {
         $this->validate($request, [
             'meno' => 'required',
         ]);
-        $users = DB::update('update zamestnanci set meno = ?, pracovisko = ?, oddelenie = ?, miestnost = ?, funkcia = ? where id = ?',
+        $users = DB::update('update zamestnanci set meno = ?, pracovisko = ?, oddelenie = ?, miestnost = ?, funkcia = ?, info = ? where id = ?',
             [$request->get('meno'), $request->get('pracovisko'),
-                $request->get('oddelenie'), $request->get('miestnost'), $request->get('funkcia'), Session::get('id')]);
+                $request->get('oddelenie'), $request->get('miestnost'), $request->get('funkcia'), $request->get('aboutMe'), Session::get('id')]);
 
+        return redirect('profile/' . Session::get('id'));
+    }
+
+    public function storeEditPublication(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',]);
+        DB::update('update publikacie set nazov = ?, rok = ?, obsah = ?, where id = ?',
+            [$request->get('name'), $request->get('id')]);
+        return redirect('profile/' . Session::get('id'));
+    }
+
+    public function storeEditDigSkill(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',]);
+        DB::update('update dig_zrucnosti set nazov = ? where id = ?',
+            [$request->get('name'), $request->get('id')]);
+        return redirect('profile/' . Session::get('id'));
+    }
+
+    public function storeEditSocSkill(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',]);
+        DB::update('update soc_zrucnosti set nazov = ? where id = ?',
+            [$request->get('name'), $request->get('id')]);
+        return redirect('profile/' . Session::get('id'));
+    }
+
+    public function storeEditLab(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',]);
+        DB::update('update laboratoria set nazov = ? where id = ?',
+            [$request->get('name'), $request->get('id')]);
+        return redirect('profile/' . Session::get('id'));
+    }
+
+    public function storeEditProject(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',
+            'year' => 'required',]);
+        DB::update('update projekty set nazov = ?, rok = ? where id = ?',
+            [$request->get('name'), $request->get('year'), $request->get('id')]);
         return redirect('profile/' . Session::get('id'));
     }
 
@@ -126,7 +189,7 @@ class addController extends Controller
         $this->validate($request, [
             'id' => 'required',
             'name' => 'required',
-            'year ' => 'required',]);
+            'year' => 'required',]);
         DB::update('update predmety set nazov = ?, rok = ? where id = ?',
             [$request->get('name'), $request->get('year'), $request->get('id')]);
         return redirect('profile/' . Session::get('id'));
@@ -140,17 +203,11 @@ class addController extends Controller
     public function storeTitle(Request $request)
     {
         $this->validate($request, [
-            'nameTitle' => 'required',
             'schoolName' => 'required',
-            'shortName' => 'required',
             'year' => 'required',
         ]);
-        $id = DB::table('tituly')->insertGetId([
-            'nazov' => $request->get('nameTitle'),
-            'skratka' => $request->get('shortName'),
-        ]);
         $users = DB::insert('insert into zamestnanci_tituly (zamestnanec_id, titul_id,rok,skola) values (?,?,?,?)',
-            [Session::get('id'), $id, $request->get('year'), $request->get('schoolName')]);
+            [Session::get('id'), $request->get('idTitle'), $request->get('year'), $request->get('schoolName')]);
 
         return redirect('profile/' . Session::get('id'));
     }

@@ -77,6 +77,11 @@ body {
     justify-content: center;
 }
 
+.name-out-wrapper{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .skills {
     width: 100%;
 }

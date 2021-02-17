@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/edit.css') }}"/>
 </head>
 <body>
-<div class="add-btn-wrapper">
+<div class="add-btn-wrapper publication-edit-wrapper">
     <button type="button" class="btn reg-btn" data-toggle="modal" data-target="#addPublication">Pridať</button>
 </div>
 

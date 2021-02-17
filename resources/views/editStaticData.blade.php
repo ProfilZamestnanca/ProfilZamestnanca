@@ -56,6 +56,9 @@
                     </div>
                     {{Form::text('funkcia',$zam->getFunction(),['class' => 'form-control register-input','placeholder' => 'Funkcia'])}}
                 </div>
+                <div class="name-wrapper">
+                    {{Form::textarea('aboutMe','',['class' => 'form-control register-input','placeholder' => 'O Mne'])}}
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn reg-btn" data-dismiss="modal">Zavrieť</button>

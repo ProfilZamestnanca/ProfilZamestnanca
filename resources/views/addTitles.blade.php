@@ -27,13 +27,29 @@
             </div>
             <div class="modal-body">
                 <div class="name-wrapper">
-                    {{Form::text('nameTitle','',['class' => 'form-control register-input','placeholder' => 'Nazov'])}}
+                    <div class="label-input">
+                        Názov titulu
+                    </div>
+                    {!! Form::select('idTitle',[$zam->allTitles[0]->id => $zam->allTitles[0]->getTitleType(),
+                   $zam->allTitles[1]->id => $zam->allTitles[1]->getTitleType(),
+                  $zam->allTitles[2]->id => $zam->allTitles[2]->getTitleType(),
+                  $zam->allTitles[3]->id => $zam->allTitles[3]->getTitleType(),
+                  $zam->allTitles[4]->id => $zam->allTitles[4]->getTitleType(),
+                   $zam->allTitles[5]->id => $zam->allTitles[5]->getTitleType(),
+                  $zam->allTitles[6]->id => $zam->allTitles[6]->getTitleType(),
+                  $zam->allTitles[7]->id => $zam->allTitles[7]->getTitleType(),
+                ],'',['class'=>'form-control','placeholder'=>'Vyber titul']) !!}
                 </div>
                 <div class="name-wrapper">
+                    <div class="label-input">
+                        Názov školy
+                    </div>
                     {{Form::text('schoolName','',['class' => 'form-control register-input','placeholder' => 'Nazov školy'])}}
                 </div>
                 <div class="name-wrapper">
-                    {{Form::text('shortName','',['class' => 'form-control register-input','placeholder' => 'Skratka'])}}
+                    <div class="label-input">
+                        Rok
+                    </div>
                     {{Form::text('year','',['class' => 'form-control register-input','placeholder' => 'Rok ukončenia štúdia'])}}
                 </div>
             </div>
@@ -43,7 +59,6 @@
             </div>
         </div>
     </div>
-
 </div>
 {!! Form::close() !!}
 </body>

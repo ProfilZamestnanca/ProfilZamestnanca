@@ -12,6 +12,42 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('deleteTitle', [
+    'uses' => 'addController@deleteTitle'
+]);
+Route::post('editTitle', [
+    'uses' => 'addController@storeEditTitle'
+]);
+Route::post('deletePublication', [
+    'uses' => 'addController@deletePublication'
+]);
+Route::post('editPublication', [
+    'uses' => 'addController@storeEditPublication'
+]);
+Route::post('deleteDigSkill', [
+    'uses' => 'addController@deleteDigSkill'
+]);
+Route::post('editDigSkill', [
+    'uses' => 'addController@storeEditDigSkill'
+]);
+Route::post('deleteSocSkill', [
+    'uses' => 'addController@deleteSocSkill'
+]);
+Route::post('editSocSkill', [
+    'uses' => 'addController@storeEditSocSkill'
+]);
+Route::post('deleteLab', [
+    'uses' => 'addController@deleteLab'
+]);
+Route::post('editLab', [
+    'uses' => 'addController@storeEditLab'
+]);
+Route::post('deleteProject', [
+    'uses' => 'addController@deleteProject'
+]);
+Route::post('editProject', [
+    'uses' => 'addController@storeEditProject'
+]);
 Route::post('deleteSubject', [
     'uses' => 'addController@deleteSubject'
 ]);

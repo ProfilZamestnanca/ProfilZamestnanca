@@ -28,8 +28,7 @@
                     <div class="about-me">
                         <h5 class="font-heading">O Mne</h5>
                         <p class="font-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacinia
-                            metus eu elit sodales.
+                            {{$zam->getAboutMe()}}
                         </p>
                         <div class="about-me-wrapper">
                             <div class="about-me-button-wrapper">
@@ -58,19 +57,28 @@
                                                 </div>
                                                 <div class="vertical-line"></div>
                                             </div>
-                                            <div class="right-side-works-wrapper">
+                                            <div class="right-side-works-wrapper ">
                                                 @for($i = 0; $i < count($zam->sortedTitles[$l]); $i++ )
-                                                    <div class="title-wrapper">
-                                                        <div class="title-heading-wrapper">
-                                                            <i class="fas fa-user-graduate graduate-icon"></i>
-                                                            <h5 class="font-heading">{{$zam->sortedTitles[$l][$i]->getTitleType()}}
-                                                                ({{$zam->sortedTitles[$l][$i]->getTitleShortcut()}}
-                                                                )</h5>
+                                                    <div class="title-wrapper" style="display: flex">
+                                                        <div>
+                                                            <div class="title-heading-wrapper">
+                                                                <i class="fas fa-user-graduate graduate-icon"></i>
+                                                                <h5 class="font-heading">
+                                                                    {{$zam->sortedTitles[$l][$i]->getTitleType()}}
+                                                                    ({{$zam->sortedTitles[$l][$i]->getTitleShortcut()}})
+                                                                </h5>
+                                                            </div>
+                                                            <div class="place-wrapper font-text">
+                                                                {{$zam->sortedTitles[$l][$i]->getSchool()}}
+                                                            </div>
                                                         </div>
-                                                        <div
-                                                            class="place-wrapper font-text">{{$zam->sortedTitles[$l][$i]->getSchool()}}
-                                                        </div>
+                                                        @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                                            <div class="edit-delete" style="margin-top: auto; margin-bottom: auto">
+                                                                @include('editTitle',['l' => $l, 'i' => $i])
+                                                            </div>
+                                                        @endif
                                                     </div>
+
                                                 @endfor
                                             </div>
                                         </div>
@@ -97,7 +105,7 @@
                                                     <div class="subject-wrapper">
                                                         <i class="fas fa-chalkboard-teacher graduate-icon"></i>
                                                         <div
-                                                            class="font-heading">{{$zam->sortedSubjects[$l][$i]->getName()}}
+                                                            class="font-heading name-out-wrapper">{{$zam->sortedSubjects[$l][$i]->getName()}}
                                                         </div>
                                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                                             <div class="edit-delete">
@@ -131,7 +139,12 @@
                                                     <div class="subject-wrapper">
                                                         <i class="fas fa-folder graduate-icon"></i>
                                                         <div
-                                                            class="font-heading">{{$zam->sortedProjects[$l][$i]->getName()}}</div>
+                                                            class="font-heading name-out-wrapper">{{$zam->sortedProjects[$l][$i]->getName()}}</div>
+                                                        @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                                            <div class="edit-delete">
+                                                                @include('editProjects',['l' => $l, 'i' => $i])
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 @endfor
                                             </div>
@@ -233,7 +246,13 @@
                                 @for($i = 0; $i < count($zam->getLaboratories()); $i++ )
                                     <div class="subject-wrapper">
                                         <i class="fas fa-flask graduate-icon"></i>
-                                        <div class="font-heading">{{$zam->getLaboratories()[$i]->name}}</div>
+                                        <div
+                                            class="font-heading name-out-wrapper">{{$zam->getLaboratories()[$i]->name}}</div>
+                                        @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                            <div class="edit-delete">
+                                                @include('editLab',['i' => $i])
+                                            </div>
+                                        @endif
                                     </div>
                                 @endfor
                                 @if(Session::get('id') != '' && Session::get('id') == $zam->id)
@@ -265,8 +284,15 @@
                                     </div>
                                     <div class="skills-content-wrapper">
                                         @for($i=0; $i < count($zam->getSocialSkills()); $i++)
-                                            <div
-                                                class="skill font-text place-wrapper">{{$zam->getSocialSkills()[$i]}}</div>
+                                            <div class="subject-wrapper">
+                                                <div
+                                                    class="skill font-text place-wrapper">{{$zam->getSocialSkills()[$i]->name}}</div>
+                                                @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                                    <div class="edit-delete">
+                                                        @include('editSocSkills',['i' => $i])
+                                                    </div>
+                                                @endif
+                                            </div>
                                         @endfor
                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                             @include('addSocialSkill')
@@ -281,8 +307,15 @@
                                     </div>
                                     <div class="skills-content-wrapper">
                                         @for($i=0; $i < count($zam->getDigitalSkills()); $i++)
-                                            <div
-                                                class="skill font-text place-wrapper">{{$zam->getDigitalSkills()[$i]->getName()}}</div>
+                                            <div class="subject-wrapper">
+                                                <div
+                                                    class="skill font-text place-wrapper">{{$zam->getDigitalSkills()[$i]->getName()}}</div>
+                                                @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                                    <div class="edit-delete">
+                                                        @include('editDigSkill',['i' => $i])
+                                                    </div>
+                                                @endif
+                                            </div>
                                         @endfor
                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                             @include('addDigitalSkill')
@@ -338,6 +371,11 @@
                                                             {{$zam->sortedPublications[$l][0]->getContent()}}
                                                         </p>
                                                     </div>
+                                                    @if(Session::get('id') != '' && Session::get('id') == $zam->id)
+                                                        <div class="edit-delete">
+                                                            @include('editPublication',['i' => $i, 'l' => $l])
+                                                        </div>
+                                                    @endif
                                                 </div>
                                             </div>
                                         @endfor

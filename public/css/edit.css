@@ -16,8 +16,13 @@
     margin-left: 5px;
 }
 
+.publication-edit-wrapper{
+    padding: 10px;
+}
+
 .hidden-input{
     visibility: hidden;
+    position: absolute;
 }
 
 .add-btn-wrapper{

@@ -17,6 +17,7 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 class Zamestnanec extends Model
 {
     use HasFactory;
+    public $allTitles = array();
     public $id;
     private $name;
     private $aboutMe;
@@ -67,9 +68,9 @@ class Zamestnanec extends Model
         array_push($this->laboratory, new laboratory($name,$id));
     }
 
-    public function addSocialSkill($name)
+    public function addSocialSkill($name, $id)
     {
-        array_push($this->socialSkills, $name);
+        array_push($this->socialSkills, new socialSkill($name,$id));
     }
 
     public function getSocialSkills()
