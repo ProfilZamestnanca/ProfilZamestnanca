@@ -20,21 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="172d8142-ac7f-4647-b6ad-0b38ec7d570f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17__2__2021_7_43__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17__2__2021_7_43__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17__2__2021_7_43__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17__2__2021_7_43__Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/Zamestnanec.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/Zamestnanec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ZamestnanecController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ZamestnanecController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/addController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/addController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/employeeProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/employeeProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addPublication.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addPublication.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addTitles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addTitles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editContacts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editContacts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editStaticData.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editStaticData.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/zamestnanec.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/zamestnanec.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/loginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editDigSkill.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editDigSkill.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editLab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editLab.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editProjects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editProjects.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editPublication.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editPublication.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editSocSkills.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editSocSkills.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editSubject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editSubject.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editTitle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editTitle.blade.php" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,7 +236,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2542fa8c-20f8-485e-9f5c-5fc5ca945218" name="Default Changelist" comment="" />
+      <changelist id="172d8142-ac7f-4647-b6ad-0b38ec7d570f" name="Default Changelist" comment="" />
       <created>1606311706391</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -269,6 +267,7 @@
       <workItem from="1613379332951" duration="1343000" />
       <workItem from="1613495118623" duration="8767000" />
       <workItem from="1613506061405" duration="9434000" />
+      <workItem from="1613648056106" duration="2112000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <created>1613374715891</created>
@@ -284,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613558736382</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Edit of data added">
+      <created>1613601288374</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613601288379</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +312,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="msg" />
     <MESSAGE value="dataTables" />
-    <option name="LAST_COMMIT_MESSAGE" value="dataTables" />
+    <MESSAGE value="Edit of data added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit of data added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="73" key="#PHP" timestamp="1606311752233">

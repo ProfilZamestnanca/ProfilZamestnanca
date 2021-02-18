@@ -9,7 +9,7 @@
 <body>
 <div class="add-btn-wrapper">
     <button type="button" class="btn reg-btn" data-toggle="modal" data-target="#editSocSkill{{$i}}">Upraviť</button>
-    <button type="button" class="btn btn-space btn-danger" data-toggle="modal" data-target="#deleteSubject"><span aria-hidden="true">&times;</span></button>
+    <button type="button" class="btn btn-space btn-danger" data-toggle="modal" data-target="#deleteSocSkill{{$i}}"><span aria-hidden="true">&times;</span></button>
 </div>
 
 
@@ -44,24 +44,25 @@
     {!! Form::close() !!}
 </div>
 
-<div class="modal fade" id="deleteSubject" tabindex="-1" role="dialog" aria-labelledby="deleteSubject"
+<div class="modal fade" id="deleteSocSkill{{$i}}" tabindex="-1" role="dialog"
      aria-hidden="true">
-
+    {!! Form::open(['action' => 'addController@deleteSocSkill','method' => 'POST']) !!}
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteSubject">Naozaj chcete odstrániť predmet?</h5>
+                <h5 class="modal-title" id="deleteSocSkill{{$i}}">Naozaj chcete odstrániť Sociálnu Zručnosť?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-footer">
+                {{Form::text('id',$zam->getSocialSkills()[$i]->id,['class' => 'form-control hidden-input','placeholder' => 'id'])}}
                 <button type="button" class="btn reg-btn" data-dismiss="modal">Zavrieť</button>
                 {{Form::submit('Odstrániť',['class'=>'btn btn-danger'])}}
             </div>
         </div>
     </div>
-
+    {!! Form::close() !!}
 </div>
 </body>
 </html>

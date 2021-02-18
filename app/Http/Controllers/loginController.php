@@ -40,7 +40,7 @@ class loginController extends Controller
         $user = DB::table('zamestnanci')
             ->where('zamestnanci.meno', '=', $request->get('name'))
             ->select('*')->get();
-        if ($user != null) {
+        if ($user != null && count($user->pluck('id')) !=0) {
             if (Hash::check($request->get('password'), $user->pluck('heslo')[0])) {
                 Session::put('id', $user->pluck('id')[0]);
                 Session::put('name', $request->get('name'));
