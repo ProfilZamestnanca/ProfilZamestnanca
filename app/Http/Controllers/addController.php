@@ -125,9 +125,10 @@ class addController extends Controller
         $this->validate($request, [
             'meno' => 'required',
         ]);
-        $users = DB::update('update zamestnanci set meno = ?, pracovisko = ?, oddelenie = ?, miestnost = ?, funkcia = ?, info = ? where id = ?',
+        $users = DB::update('update zamestnanci set meno = ?, pracovisko = ?, oddelenie = ?, miestnost = ?, funkcia = ?, info = ?, photo = ? where id = ?',
             [$request->get('meno'), $request->get('pracovisko'),
-                $request->get('oddelenie'), $request->get('miestnost'), $request->get('funkcia'), $request->get('aboutMe'), Session::get('id')]);
+                $request->get('oddelenie'), $request->get('miestnost'), $request->get('funkcia'),
+                $request->get('aboutMe'), $request->get('photoId'), Session::get('id')]);
 
         return redirect('profile/' . Session::get('id'));
     }

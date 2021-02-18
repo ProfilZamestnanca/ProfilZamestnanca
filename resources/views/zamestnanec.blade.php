@@ -77,7 +77,7 @@
                                                         </div>
                                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                                             <div class="edit-delete" style="margin-top: auto; margin-bottom: auto">
-                                                                @include('editTitle',['l' => $l, 'i' => $i])
+                                                                @include('editViews.editTitle',['l' => $l, 'i' => $i])
                                                             </div>
                                                         @endif
                                                     </div>
@@ -87,7 +87,7 @@
                                         </div>
                                     @endfor
                                     @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                        @include('addTitles')
+                                        @include('addViews.addTitles')
                                     @endif
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                                                         </div>
                                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                                             <div class="edit-delete">
-                                                                @include('editSubject',['l' => $l, 'i' => $i])
+                                                                @include('editViews.editSubject',['l' => $l, 'i' => $i])
                                                             </div>
                                                         @endif
                                                     </div>
@@ -121,7 +121,7 @@
                                         </div>
                                     @endfor
                                     @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                        @include('addPredmet')
+                                        @include('addViews.addPredmet')
                                     @endif
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                                             class="font-heading name-out-wrapper">{{$zam->sortedProjects[$l][$i]->getName()}}</div>
                                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                                             <div class="edit-delete">
-                                                                @include('editProjects',['l' => $l, 'i' => $i])
+                                                                @include('editViews.editProjects',['l' => $l, 'i' => $i])
                                                             </div>
                                                         @endif
                                                     </div>
@@ -154,7 +154,7 @@
                                         </div>
                                     @endfor
                                     @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                        @include('addProject')
+                                        @include('addViews.addProject')
                                     @endif
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
             </div>
             <div class="right-side-wrapper">
                 @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                    @include('editStaticData')
+                    @include('editViews.editStaticData')
                 @endif
                 <div class="workplace">
                     <h5 class="font-heading">Pracovisko</h5>
@@ -224,7 +224,7 @@
                                 </div>
                             </div>
                             @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                @include('editContacts')
+                                @include('editViews.editContacts')
                             @endif
                         </div>
 
@@ -253,13 +253,13 @@
                                             class="font-heading name-out-wrapper">{{$zam->getLaboratories()[$i]->name}}</div>
                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                             <div class="edit-delete">
-                                                @include('editLab',['i' => $i])
+                                                @include('editViews.editLab',['i' => $i])
                                             </div>
                                         @endif
                                     </div>
                                 @endfor
                                 @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                    @include('addLaboratori')
+                                    @include('addViews.addLaboratori')
                                 @endif
                             </div>
                         </div>
@@ -292,13 +292,13 @@
                                                     class="skill font-text place-wrapper">{{$zam->getSocialSkills()[$i]->name}}</div>
                                                 @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                                     <div class="edit-delete">
-                                                        @include('editSocSkills',['i' => $i])
+                                                        @include('editViews.editSocSkills',['i' => $i])
                                                     </div>
                                                 @endif
                                             </div>
                                         @endfor
                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                            @include('addSocialSkill')
+                                            @include('addViews.addSocialSkill')
                                         @endif
                                     </div>
                                 </div>
@@ -315,13 +315,13 @@
                                                     class="skill font-text place-wrapper">{{$zam->getDigitalSkills()[$i]->getName()}}</div>
                                                 @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                                     <div class="edit-delete">
-                                                        @include('editDigSkill',['i' => $i])
+                                                        @include('editViews.editDigSkill',['i' => $i])
                                                     </div>
                                                 @endif
                                             </div>
                                         @endfor
                                         @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                            @include('addDigitalSkill')
+                                            @include('addViews.addDigitalSkill')
                                         @endif
                                     </div>
                                 </div>
@@ -376,7 +376,7 @@
                                                     </div>
                                                     @if(Session::get('id') != '' && Session::get('id') == $zam->id)
                                                         <div class="edit-delete">
-                                                            @include('editPublication',['i' => $i, 'l' => $l])
+                                                            @include('editViews.editPublication',['i' => $i, 'l' => $l])
                                                         </div>
                                                     @endif
                                                 </div>
@@ -387,7 +387,7 @@
                                 </div>
                             @endfor
                             @if(Session::get('id') != '' && Session::get('id') == $zam->id)
-                                @include('addPublication')
+                                @include('addViews.addPublication')
                             @endif
                         </div>
                     </div>
