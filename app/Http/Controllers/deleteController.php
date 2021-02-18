@@ -11,7 +11,7 @@ class deleteController extends Controller
     {
         DB::table('zamestnanci_tituly')
             ->where('titul_id', '=', $request->get('id'))
-            ->where('titul_id', '=', Session::get('id'))->delete();
+            ->where('zamestnanec_id', '=', Session::get('id'))->delete();
         return redirect('profile/' . Session::get('id'));
     }
 
