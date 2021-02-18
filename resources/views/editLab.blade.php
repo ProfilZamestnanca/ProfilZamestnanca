@@ -31,7 +31,7 @@
                     <div class="label-input">
                         Názov
                     </div>
-                    {{Form::text('name',$zam->getLaboratories()[$i]->name,['class' => 'form-control register-input','placeholder' => 'Názov'])}}
+                    {{Form::text('nazov',$zam->getLaboratories()[$i]->name,['class' => 'form-control register-input','placeholder' => 'Názov'])}}
                 </div>
 
             </div>

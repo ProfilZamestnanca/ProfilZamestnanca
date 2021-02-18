@@ -30,13 +30,13 @@
                     <div class="label-input">
                         Názov
                     </div>
-                    {{Form::text('namePublication','',['class' => 'form-control register-input','placeholder' => 'Nazov'])}}
+                    {{Form::text('nazov','',['class' => 'form-control register-input','placeholder' => 'Nazov'])}}
                 </div>
                 <div class="name-wrapper">
                     <div class="label-input">
                         Rok vydania
                     </div>
-                    {{Form::text('yearPublication','',['class' => 'form-control register-input','placeholder' => 'Rok vydania'])}}
+                    {{Form::text('rok','',['class' => 'form-control register-input','placeholder' => 'Rok vydania'])}}
                 </div>
                 <div class="name-wrapper">
                     {{Form::textarea('contentPublication','',['class' => 'form-control register-input','placeholder' => 'Popis'])}}

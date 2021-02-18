@@ -29,13 +29,13 @@
                     <div class="label-input">
                         Názov
                     </div>
-                    {{Form::text('nameProject','',['class' => 'form-control register-input','placeholder' => 'Názov'])}}
+                    {{Form::text('nazov','',['class' => 'form-control register-input','placeholder' => 'Názov'])}}
                 </div>
                 <div class="name-wrapper">
                     <div class="label-input">
                         Rok
                     </div>
-                    {{Form::text('yearProject','',['class' => 'form-control register-input','placeholder' => 'Rok'])}}
+                    {{Form::text('rok','',['class' => 'form-control register-input','placeholder' => 'Rok'])}}
                 </div>
             </div>
             <div class="modal-footer">

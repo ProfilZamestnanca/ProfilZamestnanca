@@ -10,8 +10,11 @@
 
 </head>
 <body>
-
+<div class="error-msg">
+    @include('messages')
+</div>
 <div class="page-wrapper">
+
     <div class="layout-wrapper">
         <div class="top-wrapper">
             <div class="left-side-wrapper">

@@ -32,13 +32,13 @@
                         Názov
                     </div>
 
-                    {{Form::text('name',$zam->sortedProjects[$l][$i]->getName(),['class' => 'form-control register-input','placeholder' => 'Názov'])}}
+                    {{Form::text('nazov',$zam->sortedProjects[$l][$i]->getName(),['class' => 'form-control register-input','placeholder' => 'Názov'])}}
                 </div>
                 <div class="name-wrapper">
                     <div class="label-input">
                         Rok výučby
                     </div>
-                    {{Form::text('year',$zam->sortedProjects[$l][$i]->getYear(),['class' => 'form-control register-input','placeholder' => 'Rok výučby'])}}
+                    {{Form::text('rok',$zam->sortedProjects[$l][$i]->getYear(),['class' => 'form-control register-input','placeholder' => 'Rok výučby'])}}
                 </div>
 
             </div>

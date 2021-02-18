@@ -46,13 +46,13 @@
                     <div class="label-input">
                         Názov školy
                     </div>
-                    {{Form::text('schoolName',$zam->sortedTitles[$l][$i]->getSchool(),['class' => 'form-control register-input','placeholder' => 'Nazov školy'])}}
+                    {{Form::text('nazovSkoly',$zam->sortedTitles[$l][$i]->getSchool(),['class' => 'form-control register-input','placeholder' => 'Nazov školy'])}}
                 </div>
                 <div class="name-wrapper">
                     <div class="label-input">
                         Rok
                     </div>
-                    {{Form::text('year',$zam->sortedTitles[$l][$i]->getYear(),['class' => 'form-control register-input','placeholder' => 'Rok ukončenia štúdia'])}}
+                    {{Form::text('rok',$zam->sortedTitles[$l][$i]->getYear(),['class' => 'form-control register-input','placeholder' => 'Rok ukončenia štúdia'])}}
                 </div>
             </div>
             <div class="modal-footer">

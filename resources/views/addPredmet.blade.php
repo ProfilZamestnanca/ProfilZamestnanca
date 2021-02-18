@@ -18,9 +18,6 @@
      aria-hidden="true">
 
     <div class="modal-dialog" role="document">
-        <div class="error-msg">
-            @include('messages')
-        </div>ł
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addPredmet">Pridať Predmet</h5>
@@ -33,13 +30,13 @@
                     <div class="label-input">
                         Názov
                     </div>
-                    {{Form::text('namePredmet','',['class' => 'form-control register-input','placeholder' => 'Názov'])}}
+                    {{Form::text('nazov','',['class' => 'form-control register-input','placeholder' => 'Názov'])}}
                 </div>
                 <div class="name-wrapper">
                     <div class="label-input">
                         Rok výučby
                     </div>
-                    {{Form::text('yearPredmet','',['class' => 'form-control register-input','placeholder' => 'Rok výučby'])}}
+                    {{Form::text('rok','',['class' => 'form-control register-input','placeholder' => 'Rok výučby'])}}
                 </div>
 
             </div>

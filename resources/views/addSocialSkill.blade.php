@@ -30,7 +30,7 @@
                     <div class="label-input">
                         Názov
                     </div>
-                    {{Form::text('nameSocSkill','',['class' => 'form-control register-input','placeholder' => 'Nazov'])}}
+                    {{Form::text('nazov','',['class' => 'form-control register-input','placeholder' => 'Nazov'])}}
                 </div>
             </div>
             <div class="modal-footer">

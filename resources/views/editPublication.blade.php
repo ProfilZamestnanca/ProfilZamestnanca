@@ -33,13 +33,13 @@
                     <div class="label-input">
                         Názov
                     </div>
-                    {{Form::text('namePublication',$zam->sortedPublications[$l][$i]->getName(),['class' => 'form-control register-input','placeholder' => 'Nazov'])}}
+                    {{Form::text('nazov',$zam->sortedPublications[$l][$i]->getName(),['class' => 'form-control register-input','placeholder' => 'Nazov'])}}
                 </div>
                 <div class="name-wrapper">
                     <div class="label-input">
                         Rok vydania
                     </div>
-                    {{Form::text('yearPublication',$zam->sortedPublications[$l][$i]->getYear(),['class' => 'form-control register-input','placeholder' => 'Rok vydania'])}}
+                    {{Form::text('rokVydania',$zam->sortedPublications[$l][$i]->getYear(),['class' => 'form-control register-input','placeholder' => 'Rok vydania'])}}
                 </div>
                 <div class="name-wrapper">
                     {{Form::textarea('contentPublication',$zam->sortedPublications[$l][$i]->getContent(),['class' => 'form-control register-input','placeholder' => 'Popis'])}}

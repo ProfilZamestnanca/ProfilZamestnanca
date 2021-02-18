@@ -32,7 +32,7 @@
                     <div class="label-input">
                         Názov
                     </div>
-                    {{Form::text('name',$zam->getDigitalSkills()[$i]->getName(),['class' => 'form-control register-input','placeholder' => 'Názov'])}}
+                    {{Form::text('nazov',$zam->getDigitalSkills()[$i]->getName(),['class' => 'form-control register-input','placeholder' => 'Názov'])}}
                 </div>
 
             </div>

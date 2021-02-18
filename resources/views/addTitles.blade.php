@@ -30,7 +30,7 @@
                     <div class="label-input">
                         Názov titulu
                     </div>
-                    {!! Form::select('idTitle',[$zam->allTitles[0]->id => $zam->allTitles[0]->getTitleType(),
+                    {!! Form::select('nazovTitulu',[$zam->allTitles[0]->id => $zam->allTitles[0]->getTitleType(),
                    $zam->allTitles[1]->id => $zam->allTitles[1]->getTitleType(),
                   $zam->allTitles[2]->id => $zam->allTitles[2]->getTitleType(),
                   $zam->allTitles[3]->id => $zam->allTitles[3]->getTitleType(),
@@ -44,13 +44,13 @@
                     <div class="label-input">
                         Názov školy
                     </div>
-                    {{Form::text('schoolName','',['class' => 'form-control register-input','placeholder' => 'Nazov školy'])}}
+                    {{Form::text('skola','',['class' => 'form-control register-input','placeholder' => 'Nazov školy'])}}
                 </div>
                 <div class="name-wrapper">
                     <div class="label-input">
                         Rok
                     </div>
-                    {{Form::text('year','',['class' => 'form-control register-input','placeholder' => 'Rok ukončenia štúdia'])}}
+                    {{Form::text('rok','',['class' => 'form-control register-input','placeholder' => 'Rok ukončenia štúdia'])}}
                 </div>
             </div>
             <div class="modal-footer">

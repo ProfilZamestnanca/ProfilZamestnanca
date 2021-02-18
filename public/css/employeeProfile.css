@@ -77,6 +77,12 @@ body {
     justify-content: center;
 }
 
+.error-msg{
+    max-width: 550px;
+    margin: auto;
+    padding-top: 10px;
+}
+
 .name-out-wrapper{
     margin-top: auto;
     margin-bottom: auto;
