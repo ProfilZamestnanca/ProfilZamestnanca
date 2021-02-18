@@ -11,7 +11,7 @@
     <button type="button" class="btn reg-btn" data-toggle="modal" data-target="#editStaticData">Upraviť</button>
 </div>
 
-{!! Form::open(['action' => 'addController@storeEditStatic','method' => 'POST','files'=>true]) !!}
+{!! Form::open(['action' => 'editController@storeEditStatic','method' => 'POST','files'=>true]) !!}
 
 <!-- Modal -->
 <div class="modal fade" id="editStaticData" tabindex="-1" role="dialog" aria-labelledby="editStaticData"

@@ -17,7 +17,7 @@
 <!-- Modal -->
 <div class="modal fade" id="editTitle{{$l.$i}}" tabindex="-1" role="dialog"
      aria-hidden="true">
-    {!! Form::open(['action' => 'addController@storeEditTitle','method' => 'POST']) !!}
+    {!! Form::open(['action' => 'editController@storeEditTitle','method' => 'POST']) !!}
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -65,7 +65,7 @@
 </div>
 <div class="modal fade" id="deleteTitle{{$l.$i}}" tabindex="-1" role="dialog"
      aria-hidden="true">
-    {!! Form::open(['action' => 'addController@deleteTitle','method' => 'POST']) !!}
+    {!! Form::open(['action' => 'deleteController@deleteTitle','method' => 'POST']) !!}
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

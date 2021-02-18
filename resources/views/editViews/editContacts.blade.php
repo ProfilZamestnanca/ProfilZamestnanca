@@ -11,7 +11,7 @@
     <button type="button" class="btn reg-btn" data-toggle="modal" data-target="#editContacts">Upraviť</button>
 </div>
 
-{!! Form::open(['action' => 'addController@storeEditContacts','method' => 'POST']) !!}
+{!! Form::open(['action' => 'editController@storeEditContacts','method' => 'POST']) !!}
 
 <!-- Modal -->
 <div class="modal fade" id="editContacts" tabindex="-1" role="dialog" aria-labelledby="editContacts"
