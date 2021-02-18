@@ -13,52 +13,52 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('deleteTitle', [
-    'uses' => 'addController@deleteTitle'
+    'uses' => 'deleteController@deleteTitle'
 ]);
 Route::post('editTitle', [
-    'uses' => 'addController@storeEditTitle'
+    'uses' => 'editController@storeEditTitle'
 ]);
 Route::post('deletePublication', [
-    'uses' => 'addController@deletePublication'
+    'uses' => 'deleteController@deletePublication'
 ]);
 Route::post('editPublication', [
-    'uses' => 'addController@storeEditPublication'
+    'uses' => 'editController@storeEditPublication'
 ]);
 Route::post('deleteDigSkill', [
-    'uses' => 'addController@deleteDigSkill'
+    'uses' => 'deleteController@deleteDigSkill'
 ]);
 Route::post('editDigSkill', [
-    'uses' => 'addController@storeEditDigSkill'
+    'uses' => 'editController@storeEditDigSkill'
 ]);
 Route::post('deleteSocSkill', [
-    'uses' => 'addController@deleteSocSkill'
+    'uses' => 'deleteController@deleteSocSkill'
 ]);
 Route::post('editSocSkill', [
-    'uses' => 'addController@storeEditSocSkill'
+    'uses' => 'editController@storeEditSocSkill'
 ]);
 Route::post('deleteLab', [
-    'uses' => 'addController@deleteLab'
+    'uses' => 'deleteController@deleteLab'
 ]);
 Route::post('editLab', [
-    'uses' => 'addController@storeEditLab'
+    'uses' => 'editController@storeEditLab'
 ]);
 Route::post('deleteProject', [
-    'uses' => 'addController@deleteProject'
+    'uses' => 'deleteController@deleteProject'
 ]);
 Route::post('editProject', [
-    'uses' => 'addController@storeEditProject'
+    'uses' => 'editController@storeEditProject'
 ]);
 Route::post('deleteSubject', [
-    'uses' => 'addController@deleteSubject'
+    'uses' => 'deleteController@deleteSubject'
 ]);
 Route::post('storeEditSubject', [
-    'uses' => 'addController@storeEditSubject'
+    'uses' => 'editController@storeEditSubject'
 ]);
 Route::post('editContacts', [
-    'uses' => 'addController@storeEditContacts'
+    'uses' => 'editController@storeEditContacts'
 ]);
 Route::post('editStaticData', [
-    'uses' => 'addController@storeEditStatic'
+    'uses' => 'editController@storeEditStatic'
 ]);
 Route::post('addPredmet', [
     'uses' => 'addController@storePredmet'
