@@ -49,9 +49,9 @@ class addController extends Controller
             'rok' => 'required|integer',
         ]);
         $id = DB::table('publikacie')->insertGetId([
-            'nazov' => $request->get('namePublication'),
+            'nazov' => $request->get('nazov'),
             'obsah' => $request->get('contentPublication'),
-            'rok' => $request->get('yearPublication'),
+            'rok' => $request->get('rok'),
         ]);
         $users = DB::insert('insert into zamestnanci_publikacie (zamestnanec_id,publikacia_id) values (?,?)', [Session::get('id'), $id]);
         return redirect('profile/' . Session::get('id'));
@@ -132,13 +132,33 @@ class addController extends Controller
         return redirect('profile/' . Session::get('id'));
     }
 
+    public function storeEditContacts(Request $request)
+    {
+        $phone = ' ';
+        $mobil = ' ';
+        $email = ' ';
+        if($request->get('phone')){
+            $phone = $request->get('phone');
+        }
+        if($request->get('mobile')){
+            $mobil = $request->get('mobile');
+        }
+        if($request->get('email')){
+            $email = $request->get('email');
+        }
+
+        DB::update('update zamestnanci set telefon = ?, mobil = ?, email = ? where id = ?',
+            [$phone, $mobil, $email, Session::get('id')]);
+        return redirect('profile/' . Session::get('id'));
+    }
+
     public function storeEditPublication(Request $request)
     {
         $this->validate($request, [
             'id' => 'required',
             'nazov' => 'required',
             'rokVydania' => 'required|integer',]);
-        DB::update('update publikacie set nazov = ?, rok = ?, obsah = ?, where id = ?',
+        DB::update('update publikacie set nazov = ?, rok = ?, obsah = ? where id = ?',
             [$request->get('nazov'), $request->get('rokVydania'), $request->get('contentPublication'), $request->get('id')]);
         return redirect('profile/' . Session::get('id'));
     }
