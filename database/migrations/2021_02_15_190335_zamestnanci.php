@@ -25,6 +25,7 @@ class Zamestnanci extends Migration
             $table->string('email')->nullable();
             $table->string('funkcia')->nullable();
             $table->string('info')->nullable();
+            $table->string('photo')->nullable();
         });
     }
 
